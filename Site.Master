@@ -21,7 +21,7 @@
                         <a href="mailto:hotro@camp.vn">hotro@camp.vn</a>
                     </div>
                     <div class="header-links">
-                        <a href="Login.aspx">Đăng ký</a>
+                        <a href="SignUp.aspx">Đăng ký</a>
                         <a href="Login.aspx">Đăng nhập</a>
                     </div>
                 </div>
