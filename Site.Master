@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Demo_btl_10_10.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MyShop</title>
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="site-header">
+            <div class="header-top">
+                <div class="container header-top-inner">
+                    <div class="header-links">
+                        <a href="tel:0987654321">0987654321</a>
+                        <a href="mailto:hotro@camp.vn">hotro@camp.vn</a>
+                    </div>
+                    <div class="header-links">
+                        <a href="Login.aspx">Đăng ký</a>
+                        <a href="Login.aspx">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <div class="container main-nav-inner">
+                    <div class="logo"><a href="Default.aspx">MyShop</a></div>
+
+                    <ul class="nav-list">
+                        <li class="nav-item"><a class="nav-link" href="Default.aspx">Trang chủ</a></li>
+
+                        <li class="nav-item has-dropdown">
+                            <a class="nav-link" href="Products.aspx">Sản phẩm</a>
+                            <div class="dropdown-menu">
+                                <a href="Products.aspx?loai=quan-ao">Quần áo</a>
+                                <a href="Products.aspx?loai=gang-tay">Găng tay</a>
+                                <a href="Products.aspx?loai=giay-dep">Giày - dép</a>
+                                <a href="Products.aspx?loai=mu">Mũ</a>
+                                <a href="Products.aspx?loai=kinh">Kính</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="Contact.aspx">Liên hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact.aspx">Tin tức</a></li>
+                    </ul>
+
+                    <div class="search-box" role="search">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." autocomplete="off" />
+                        <button type="button" id="searchBtn" title="Tìm kiếm">🔍</button>
+                    </div>
+
+                    <a class="btn cart-btn" href="Cart.aspx">Giỏ hàng<span class="cart-count" id="cartCount">0</span></a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2026 MyShop. All rights reserved.</p>
+            </div>
+        </footer>
+    </form>
+
+    <script src="Content/products.js"></script>
+    <script src="Content/shop.js"></script>
+</body>
+</html>
