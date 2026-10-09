@@ -81,7 +81,7 @@ Dự án được phát triển theo hình thức làm việc nhóm, sử dụng
 
 Khi đóng góp code, nên tạo branch riêng, kiểm tra thay đổi trước khi commit và sử dụng Pull Request khi cần review code.
 
-##🎯 Mục đích nghiên cứu và học tập
+## 🎯 Mục đích nghiên cứu và học tập
 
 Tìm hiểu kiến trúc và nguyên lý hoạt động của ứng dụng web.
 Thực hành xây dựng giao diện bằng HTML, CSS và JavaScript.
