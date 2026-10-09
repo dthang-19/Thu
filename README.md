@@ -64,7 +64,7 @@ Demo_btl_10_10/
 1. Clone repository:
 
    ```bash
-   git clone <REPOSITORY_URL>
+   git clone https://github.com/dthang-19/Thu.git
    ```
 
 2. Mở file solution `.sln` bằng Visual Studio.
