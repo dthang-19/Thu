@@ -89,11 +89,6 @@
                 <h1 class="signup-title">Tạo tài khoản</h1>
                 <p class="signup-subtitle">Đăng ký để trải nghiệm mua sắm tại MyCamp</p>
 
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server"
-                    ForeColor="Red"
-                    HeaderText="Vui lòng kiểm tra lại:"
-                    ValidationGroup="Signup" />
-
                 <div class="signup-columns">
 
                     <!-- Cột trái: thông tin cá nhân -->
