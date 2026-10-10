@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MyShop</title>
+    <title>MyCamp</title>
     <link href="Content/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -18,7 +18,7 @@
                 <div class="container header-top-inner">
                     <div class="header-links">
                         <a href="tel:0987654321">0987654321</a>
-                        <a href="mailto:hotro@camp.vn">hotro@camp.vn</a>
+                        <a href="mailto:hotro@Mycamp.vn">hotro@Mycamp.vn</a>
                     </div>
                     <div class="header-links">
                         <a href="SignUp.aspx">Đăng ký</a>
@@ -29,7 +29,7 @@
 
             <nav class="main-nav">
                 <div class="container main-nav-inner">
-                    <div class="logo"><a href="Default.aspx">MyShop</a></div>
+                    <div class="logo"><a href="Default.aspx">MyCamp</a></div>
 
                     <ul class="nav-list">
                         <li class="nav-item"><a class="nav-link" href="Default.aspx">Trang chủ</a></li>
@@ -37,11 +37,11 @@
                         <li class="nav-item has-dropdown">
                             <a class="nav-link" href="Products.aspx">Sản phẩm</a>
                             <div class="dropdown-menu">
-                                <a href="Products.aspx?loai=quan-ao">Quần áo</a>
-                                <a href="Products.aspx?loai=gang-tay">Găng tay</a>
-                                <a href="Products.aspx?loai=giay-dep">Giày - dép</a>
-                                <a href="Products.aspx?loai=mu">Mũ</a>
-                                <a href="Products.aspx?loai=kinh">Kính</a>
+                                <a href="Products.aspx?loai=leu">Lều cắm trại</a>
+                                <a href="Products.aspx?loai=den">Đèn chiếu sáng</a>
+                                <a href="Products.aspx?loai=ba-lo">Ba lô - túi</a>
+                                <a href="Products.aspx?loai=thiet-bi">Thiết bị cắm trại</a>
+                                <a href="Products.aspx?loai=xe-dap">Xe đạp</a>
                             </div>
                         </li>
 
@@ -66,7 +66,7 @@
 
         <footer class="site-footer">
             <div class="container">
-                <p>© 2026 MyShop. All rights reserved.</p>
+                
             </div>
         </footer>
     </form>

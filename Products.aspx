@@ -8,11 +8,12 @@
             <div class="side-box">
                 <h2 class="side-title">Danh mục sản phẩm</h2>
                 <ul class="cat-list">
-                    <li><a href="Products.aspx?loai=quan-ao" class="active">Quần áo</a></li>
-                    <li><a href="Products.aspx?loai=gang-tay">Găng tay</a></li>
-                    <li><a href="Products.aspx?loai=giay-dep">Giày - dép</a></li>
-                    <li><a href="Products.aspx?loai=mu">Mũ</a></li>
-                    <li><a href="Products.aspx?loai=kinh">Kính</a></li>
+                    <li><a href="Products.aspx" data-cat="">Tất cả sản phẩm</a></li>
+                    <li><a href="Products.aspx?loai=leu" data-cat="leu">Lều cắm trại</a></li>
+                    <li><a href="Products.aspx?loai=den" data-cat="den">Đèn chiếu sáng</a></li>
+                    <li><a href="Products.aspx?loai=ba-lo" data-cat="ba-lo">Ba lô - túi</a></li>
+                    <li><a href="Products.aspx?loai=thiet-bi" data-cat="thiet-bi">Thiết bị cắm trại</a></li>
+                    <li><a href="Products.aspx?loai=xe-dap" data-cat="xe-dap">Xe đạp</a></li>
                 </ul>
             </div>
 
@@ -21,17 +22,9 @@
                 <details class="filter-group">
                     <summary>Chọn mức giá</summary>
                     <ul class="filter-options">
-                        <li><label><input type="radio" name="gia" /> Dưới 200.000đ</label></li>
-                        <li><label><input type="radio" name="gia" /> 200.000đ - 500.000đ</label></li>
-                        <li><label><input type="radio" name="gia" /> Trên 500.000đ</label></li>
-                    </ul>
-                </details>
-                <details class="filter-group">
-                    <summary>Loại</summary>
-                    <ul class="filter-options">
-                        <li><label><input type="checkbox" /> Nam</label></li>
-                        <li><label><input type="checkbox" /> Nữ</label></li>
-                        <li><label><input type="checkbox" /> Trẻ em</label></li>
+                        <li><label><input type="radio" name="gia" /> Dưới 500.000đ</label></li>
+                        <li><label><input type="radio" name="gia" /> 500.000đ - 2.000.000đ</label></li>
+                        <li><label><input type="radio" name="gia" /> Trên 2.000.000đ</label></li>
                     </ul>
                 </details>
             </div>

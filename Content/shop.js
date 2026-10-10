@@ -125,17 +125,36 @@
         renderGrid(g, list);
     });
 
-    // ===== Trang sản phẩm: danh sách + kết quả tìm kiếm =====
+    // ===== Trang sản phẩm: danh sách + tìm kiếm + lọc theo loại =====
     var productGrid = byId('productGrid');
     if (productGrid) {
         var q = getParam('q').trim();
+        var loai = getParam('loai');
         var result = searchProducts(q);
+        if (loai) {
+            result = result.filter(function (p) { return p.cat === loai; });
+        }
+
+        // Tô đậm mục danh mục đang chọn ở sidebar
+        Array.prototype.forEach.call(document.querySelectorAll('.cat-list a'), function (a) {
+            a.classList.toggle('active', (a.dataset.cat || '') === loai);
+        });
+
+        // Dòng thông tin kết quả
         var info = byId('resultInfo');
+        var text = '';
+        if (loai && CATS[loai]) {
+            text += 'Danh mục <strong>' + esc(CATS[loai]) + '</strong>. ';
+        }
         if (q) {
-            info.innerHTML = 'Tìm thấy <strong>' + result.length + '</strong> sản phẩm cho từ khóa “<strong>' +
-                esc(q) + '</strong>”. <a href="Products.aspx">Xem tất cả sản phẩm</a>';
+            text += 'Từ khóa “<strong>' + esc(q) + '</strong>”. ';
+        }
+        if (text) {
+            info.innerHTML = text + 'Tìm thấy <strong>' + result.length + '</strong> sản phẩm. ' +
+                '<a href="Products.aspx">Xem tất cả sản phẩm</a>';
             info.style.display = 'block';
         }
+
         if (result.length) {
             renderGrid(productGrid, result);
         } else {
@@ -143,7 +162,6 @@
             byId('noResult').style.display = 'block';
         }
     }
-
     // ===== Trang chi tiết =====
     var detail = byId('detail');
     if (detail) {

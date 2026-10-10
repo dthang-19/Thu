@@ -68,9 +68,41 @@
     <Content Include="Content\Products.js" />
     <Content Include="Content\Site.css" />
     <Content Include="default.aspx" />
-    <Content Include="Images\product1.jpg" />
     <Content Include="Images\banner1.jpg" />
+    <Content Include="Images\product1.jpg" />
     <Content Include="Content\shop.js" />
+    <Content Include="Images\sp1_1.jpg" />
+    <Content Include="Images\sp1_2.jpg" />
+    <Content Include="Images\sp1_3.jpg" />
+    <Content Include="Images\sp1_4.jpg" />
+    <Content Include="Images\sp2_1.jpg" />
+    <Content Include="Images\sp2_2.jpg" />
+    <Content Include="Images\sp2_3.jpg" />
+    <Content Include="Images\sp2_4.jpg" />
+    <Content Include="Images\sp3_1.jpg" />
+    <Content Include="Images\sp3_2.jpg" />
+    <Content Include="Images\sp3_3.jpg" />
+    <Content Include="Images\sp3_4.jpg" />
+    <Content Include="Images\sp4_1.jpg" />
+    <Content Include="Images\sp4_2.jpg" />
+    <Content Include="Images\sp4_3.jpg" />
+    <Content Include="Images\sp4_4.jpg" />
+    <Content Include="Images\sp5_1.jpg" />
+    <Content Include="Images\sp5_2.jpg" />
+    <Content Include="Images\sp5_3.jpg" />
+    <Content Include="Images\sp5_4.jpg" />
+    <Content Include="Images\sp6_1.jpg" />
+    <Content Include="Images\sp6_2.jpg" />
+    <Content Include="Images\sp6_3.jpg" />
+    <Content Include="Images\sp6_4.jpg" />
+    <Content Include="Images\sp7_1.jpg" />
+    <Content Include="Images\sp7_2.jpg" />
+    <Content Include="Images\sp7_3.jpg" />
+    <Content Include="Images\sp7_4.jpg" />
+    <Content Include="Images\sp8_1.jpg" />
+    <Content Include="Images\sp8_2.jpg" />
+    <Content Include="Images\sp8_3.jpg" />
+    <Content Include="Images\sp8_4.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Products.aspx" />
@@ -164,13 +196,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -178,4 +203,11 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
