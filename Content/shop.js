@@ -125,30 +125,53 @@
         renderGrid(g, list);
     });
 
-    // ===== Trang sản phẩm: danh sách + tìm kiếm + lọc theo loại =====
+    // ===== Trang sản phẩm: danh sách + tìm kiếm + lọc loại + lọc giá =====
     var productGrid = byId('productGrid');
     if (productGrid) {
         var q = getParam('q').trim();
         var loai = getParam('loai');
+        var gia = getParam('gia');
+
+        var PRICE_RANGES = {
+            'duoi-500': { min: 0, max: 499999, label: 'Dưới 500.000đ' },
+            '500-2000': { min: 500000, max: 2000000, label: '500.000đ - 2.000.000đ' },
+            'tren-2000': { min: 2000001, max: Infinity, label: 'Trên 2.000.000đ' }
+        };
+        var range = PRICE_RANGES[gia] || null;
+
         var result = searchProducts(q);
         if (loai) {
             result = result.filter(function (p) { return p.cat === loai; });
         }
+        if (range) {
+            result = result.filter(function (p) { return p.price >= range.min && p.price <= range.max; });
+        }
 
-        // Tô đậm mục danh mục đang chọn ở sidebar
+        // Tô đậm danh mục đang chọn ở sidebar
         Array.prototype.forEach.call(document.querySelectorAll('.cat-list a'), function (a) {
             a.classList.toggle('active', (a.dataset.cat || '') === loai);
         });
 
+        // Bộ lọc giá: đánh dấu lựa chọn hiện tại, đổi lựa chọn thì tải lại trang với ?gia=
+        var priceGroup = document.querySelector('.filter-group');
+        Array.prototype.forEach.call(document.querySelectorAll('input[name="gia"]'), function (r) {
+            r.checked = (r.dataset.gia || '') === (range ? gia : '');
+            r.addEventListener('change', function () {
+                var parts = [];
+                if (q) parts.push('q=' + encodeURIComponent(q));
+                if (loai) parts.push('loai=' + encodeURIComponent(loai));
+                if (r.dataset.gia) parts.push('gia=' + encodeURIComponent(r.dataset.gia));
+                location.href = 'Products.aspx' + (parts.length ? '?' + parts.join('&') : '');
+            });
+        });
+        if (range && priceGroup) priceGroup.open = true;
+
         // Dòng thông tin kết quả
         var info = byId('resultInfo');
         var text = '';
-        if (loai && CATS[loai]) {
-            text += 'Danh mục <strong>' + esc(CATS[loai]) + '</strong>. ';
-        }
-        if (q) {
-            text += 'Từ khóa “<strong>' + esc(q) + '</strong>”. ';
-        }
+        if (loai && CATS[loai]) text += 'Danh mục <strong>' + esc(CATS[loai]) + '</strong>. ';
+        if (q) text += 'Từ khóa “<strong>' + esc(q) + '</strong>”. ';
+        if (range) text += 'Mức giá <strong>' + esc(range.label) + '</strong>. ';
         if (text) {
             info.innerHTML = text + 'Tìm thấy <strong>' + result.length + '</strong> sản phẩm. ' +
                 '<a href="Products.aspx">Xem tất cả sản phẩm</a>';

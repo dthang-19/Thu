@@ -22,9 +22,10 @@
                 <details class="filter-group">
                     <summary>Chọn mức giá</summary>
                     <ul class="filter-options">
-                        <li><label><input type="radio" name="gia" /> Dưới 500.000đ</label></li>
-                        <li><label><input type="radio" name="gia" /> 500.000đ - 2.000.000đ</label></li>
-                        <li><label><input type="radio" name="gia" /> Trên 2.000.000đ</label></li>
+                        <li><label><input type="radio" name="gia" data-gia="" /> Tất cả mức giá</label></li>
+                        <li><label><input type="radio" name="gia" data-gia="duoi-500" /> Dưới 500.000đ</label></li>
+                        <li><label><input type="radio" name="gia" data-gia="500-2000" /> 500.000đ - 2.000.000đ</label></li>
+                        <li><label><input type="radio" name="gia" data-gia="tren-2000" /> Trên 2.000.000đ</label></li>
                     </ul>
                 </details>
             </div>
