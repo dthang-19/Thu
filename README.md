@@ -90,13 +90,6 @@ Tìm hiểu cách tổ chức các trang web, sử dụng Master Page và tái s
 Thực hành quản lý mã nguồn, theo dõi thay đổi và cộng tác nhóm bằng Git/GitHub.
 Vận dụng kiến thức lập trình để xây dựng một sản phẩm minh họa có tính thực tiễn phục vụ học tập.
 
-## 📌 Định hướng phát triển
-
-- Hoàn thiện chức năng tìm kiếm và lọc sản phẩm.
-- Cải thiện giao diện trên điện thoại và máy tính.
-- Xây dựng cơ chế đăng nhập và phân quyền thực tế.
-- Tích hợp cơ sở dữ liệu để quản lý sản phẩm, tài khoản và đơn hàng.
-- Hoàn thiện quy trình đặt hàng và thanh toán.
 
 ---
 
