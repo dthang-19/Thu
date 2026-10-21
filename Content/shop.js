@@ -37,11 +37,13 @@
         return true;
     }
     function updateCount() {
-        var el = byId('cartCount');
-        if (!el) return;
+        var els = document.querySelectorAll('.cart-count');
+        if (!els.length) return;
         var total = load().reduce(function (s, i) { return s + i.qty; }, 0);
-        el.textContent = total;
-        el.style.display = total ? 'inline-block' : 'none';
+        Array.prototype.forEach.call(els, function (el) {
+            el.textContent = total;
+            el.style.display = total ? 'inline-block' : 'none';
+        });
     }
     function addToCart(p, qty) {
         var cart = load();
@@ -119,9 +121,19 @@
         }, 1200);
     });
 
-    // Lưới theo danh sách id cố định, vd: <div class="p-grid" data-ids="1,2,3,4">
-    Array.prototype.forEach.call(document.querySelectorAll('.p-grid[data-ids]'), function (g) {
-        var list = g.dataset.ids.split(',').map(findProduct).filter(Boolean);
+    // Lưới sản phẩm ở trang chủ (dữ liệu lấy từ Application nên admin thêm/xóa là tự cập nhật):
+    //   data-first="4"  -> 4 sản phẩm đầu danh sách
+    //   data-latest="4" -> 4 sản phẩm mới thêm gần nhất
+    //   data-ids="1,2"  -> các sản phẩm có id chỉ định
+    Array.prototype.forEach.call(document.querySelectorAll('.p-grid[data-ids], .p-grid[data-first], .p-grid[data-latest]'), function (g) {
+        var list;
+        if (g.dataset.ids) {
+            list = g.dataset.ids.split(',').map(findProduct).filter(Boolean);
+        } else if (g.dataset.first) {
+            list = PRODUCTS.slice(0, +g.dataset.first);
+        } else {
+            list = PRODUCTS.slice(-(+g.dataset.latest));
+        }
         renderGrid(g, list);
     });
 

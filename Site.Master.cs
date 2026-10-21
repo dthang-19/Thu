@@ -1,14 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Demo_btl_10_10
 {
     public partial class Site : System.Web.UI.MasterPage
     {
+        protected bool IsLoggedIn
+        {
+            get { return HttpContext.Current.Session["User"] != null; }
+        }
+
+        protected bool IsAdmin
+        {
+            get { return AppData.IsAdmin(HttpContext.Current.Session); }
+        }
+
+        protected string DisplayName
+        {
+            get { return Convert.ToString(HttpContext.Current.Session["FullName"]); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

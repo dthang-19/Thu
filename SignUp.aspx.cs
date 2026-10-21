@@ -17,16 +17,27 @@ namespace Demo_btl_10_10
             }
 
             // Lấy thông tin người dùng nhập
-            string fullName = txtFullName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string username = txtUsername.Text.Trim();
+            Customer customer = new Customer
+            {
+                FullName = txtFullName.Text.Trim(),
+                Email = txtEmail.Text.Trim(),
+                Username = txtUsername.Text.Trim(),
+                Role = AppData.RoleCustomer
+            };
 
-            // Website minh họa: không lưu dữ liệu,
-            // không tạo tài khoản và không kết nối database.
+            // Lưu vào danh sách khách hàng trong Application (Global.asax)
+            string error;
+            if (!AppData.AddCustomer(customer, txtPassword.Text, out error))
+            {
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Text = Server.HtmlEncode(error);
+                return;
+            }
+
             lblMessage.ForeColor = Color.Green;
             lblMessage.Text =
                 "Đăng ký thành công! Xin chào " +
-                Server.HtmlEncode(fullName);
+                Server.HtmlEncode(customer.FullName) + ". Bạn có thể <a href=\"Login.aspx\">đăng nhập</a> ngay.";
 
             // Xóa dữ liệu nhạy cảm sau khi xử lý
             txtPassword.Text = string.Empty;
